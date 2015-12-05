@@ -53,7 +53,7 @@ var doc_functions = {
     var query = Doc.findByIdAndUpdate(id, DocData, {
       new: true
     });
-    return cmMethods.genericUpdate("Documents", DocData, Doc, id, query);
+    return cmMethods.genericUpdate("Documents", DocData, id, query);
   },
   getDocumentsByOwnerId: function(id) {
     var ownerId = id;

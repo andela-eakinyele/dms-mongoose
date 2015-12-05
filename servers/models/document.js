@@ -11,7 +11,7 @@ var documentSchema = new Schema({
   },
   ownerId: [{
     type: Number,
-    ref: User
+    ref: 'Users'
   }],
   documentName: {
     type: String,

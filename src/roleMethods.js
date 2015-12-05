@@ -28,7 +28,7 @@ var role_functions = {
     var query = Role.findByIdAndUpdate(id, roleData, {
       new: true
     });
-    return cmMethods.genericUpdate("Roles", roleData, Role, id, query);
+    return cmMethods.genericUpdate("Roles", roleData, id, query);
   },
 
   deleteRole: function(id) {

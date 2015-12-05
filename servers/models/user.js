@@ -36,8 +36,8 @@ var userSchema = new Schema({
     required: true
   },
   role: [{
-    type: String,
-    ref: Role
+    type: Number,
+    ref: 'Roles'
   }]
 }, {
   strict: true

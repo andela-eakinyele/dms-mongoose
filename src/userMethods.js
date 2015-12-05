@@ -18,7 +18,8 @@ var user_functions = {
     return new Promise(function(resolve, reject) {
       Role.findOne({
         title: userData.role
-      }, "_id").then(function(_role) {
+      }).then(function(_role) {
+        console.log(_role);
           if (_role) {
             userData.role = _role._id
             resolve(cmMethods.genericCreate("Users", userData, User, query));
@@ -43,6 +44,8 @@ var user_functions = {
   getUser: function(id) {
     var query = User.findOne({
       _id: id
+    }).populate({
+      path: 'role'
     });
     return cmMethods.genericGetOne("Users", query, id);
   },
@@ -51,7 +54,7 @@ var user_functions = {
     var query = User.findByIdAndUpdate(id, userData, {
       new: true
     });
-    return cmMethods.genericUpdate("Users", userData, User, id, query);
+    return cmMethods.genericUpdate("Users", userData, id, query);
   },
 
   deleteUser: function(id) {

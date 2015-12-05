@@ -124,7 +124,7 @@ exports.genericGetOne = function(modelName, query, id) {
 }
 
 // Generic Update document
-exports.genericUpdate = function(modelName, modelData, model, id, query) {
+exports.genericUpdate = function(modelName, modelData, id, query) {
   return new Promise(function(resolve, reject) {
     if (id === undefined) {
       resolve({
