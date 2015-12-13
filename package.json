@@ -11,10 +11,11 @@
   },
   "preferGlobal": "true",
   "dependencies": {
-    "commander": "^2.9.0",
     "mongoose": "^4.2.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "commander": "^2.9.0",
+  },
   "scripts": {
     "test": "jasmine-node --spec --forceexit"
   },

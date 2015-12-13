@@ -13,30 +13,34 @@ var user_functions = {
         email: userData.email
       }, {
         username: userData.username
-      }]);
+      }]).select("username name");
 
     return new Promise(function(resolve, reject) {
       Role.findOne({
         title: userData.role
       }).then(function(_role) {
-        console.log(_role);
           if (_role) {
             userData.role = _role._id
             resolve(cmMethods.genericCreate("Users", userData, User, query));
           } else {
-            console.log("Role does not exist");
-            cmMethods.dberrors(reject, "Invalid role specified", userData.role + " does not exist");
+            resolve({
+              "status": false,
+              "message": "Invalid role specified '" + userData.role + "'' does not exist",
+              "data": ""
+            });
           }
         },
         function(err) {
-          console.log("querying database", err);
           cmMethods.dberrors(reject, "querying database", err);
         });
     });
   },
 
   getAllUsers: function(limit) {
-    var query = User.find({});
+    var query = User.find({}).select("username email role name").populate({
+      path: 'role',
+      select: 'title'
+    });
     if (limit) query = query.limit(limit);
     return cmMethods.genericGetAll("Users", query);
   },
@@ -44,8 +48,9 @@ var user_functions = {
   getUser: function(id) {
     var query = User.findOne({
       _id: id
-    }).populate({
-      path: 'role'
+    }).select("username email role name").populate({
+      path: 'role',
+      select: 'title'
     });
     return cmMethods.genericGetOne("Users", query, id);
   },
