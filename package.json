@@ -1,0 +1,24 @@
+{
+  "name": "dms-mongoose",
+  "version": "1.0.0",
+  "description": "Document Management System - mongoose ODM",
+  "main": "index.js",
+  "bin": {
+    "dms-mon": "./bin/dms_mon.js"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "preferGlobal": "true",
+  "dependencies": {
+    "mongoose": "^4.2.8"
+  },
+  "devDependencies": {
+    "commander": "^2.9.0",
+  },
+  "scripts": {
+    "test": "jasmine-node --spec --forceexit"
+  },
+  "author": "emmanuel akinyele",
+  "license": "MIT"
+}

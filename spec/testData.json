@@ -1,0 +1,21 @@
+{
+  "testUsers": {
+    "user1": ["Edwin", "Abbott", "EAbbott", "eabbott", "Admin", "eabbott@write.com"],
+    "user2": ["Douglas", "Adams", "DAdams", "dadams", "Scientist", "dadams@science.com"],
+    "user3": ["Humayun", "Ahmed", "HAhmed", "hahmed", "Writer", "hahmed@write.com"],
+    "user3_uniqueTest": ["Humayun", "Ahmed", "HAhmed1", "hahmed", "Writer", "hahmed@write.com"],
+    "user3_uniqueTest2": ["Humayun", "Ahmed", "HAhmed", "hahmed", "Writer", "hahmed1@write.com"],
+    "user_invalidRole": ["John", "Craig", "JCraig", "jcraig", "Fixer", "jcraig@science.com"]
+  },
+  "testDocs": {
+    "doc1": ["EAbbott", "Lorems.js", "Lorem Ipsum", "Who knows the whole words....", "Writer, Scientist"],
+    "doc2": ["EAbbott", "Staples.json", "Staple Foods", "These are classes of group...", "Writer, Scientist"],
+    "doc3": ["EAbbott", "Techie.txt", "Life of a developer", "We can'ts stand bugs, we write and kill...", "Writer"],
+    "doc4": ["DAdams", "Clothes.doc", "Winter is coming", "John Snow likes to say, winter is coming...", "Writer, Scientist"],
+    "doc_uniqueTest": ["DAdams", "Techie.js", "Life of a developer", "We can'ts stand bugs, we write and kill...", "Scientist"],
+    "doc_typeTest": ["EAbbott", "Techie", "Life of a smartass", "We can'ts stand bugs, we write and kill...", "Writer"],
+    "doc_roleTest": ["Douglas", "Techie.js", "Life of a smartass", "We can'ts stand bugs, we write and kill...", "Fixer"],
+    "doc5": ["HAhmed", "Hardware.jsx", "Memory, Processing and Crunching", "I have no Idea what an IC Chip does...", "Writer, Scientist"]
+  },
+  "testRoles": ["Admin", "Scientist", "Writer"]
+}
